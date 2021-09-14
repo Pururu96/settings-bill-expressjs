@@ -5,8 +5,17 @@ var SettingsBill = require('./settings')
 let app = express();
 const settingsBill = SettingsBill( )
 
+// const handlebarSetup = exphbs({
+//     partialsDir: "./views/partials",
+//     viewPath:  './views',
+//     layoutsDir : './views/layouts'
+// });
+
 //set up view engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ 
+    defaultLayout: 'main',
+    layoutsDir : './views/layouts'
+}));
 app.set('view engine', 'handlebars');
 
 // parse application/x -www-form-urlencoded
