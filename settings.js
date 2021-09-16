@@ -1,4 +1,5 @@
 const moment = require("moment");
+const phoneAction = moment();
 
 module.exports = function SettingsBill(){
     
@@ -37,7 +38,7 @@ module.exports = function SettingsBill(){
         actionList.push({
             type: action,
             cost,
-            timestamp: moment().startOf('action').fromNow()
+            timestamp: phoneAction.startOf('action').fromNow()
         })
     }
 
